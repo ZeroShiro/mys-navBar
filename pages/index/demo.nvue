@@ -1,0 +1,131 @@
+<template>
+  <view class="home">
+    <nav-bar
+      :mysNavConfig="mysNavConfig"
+      :scrollTop="scrollTop"
+      @onLeftClick="onLeftClick"
+      @onRightClick="onRightClick"
+      @changeInput="changeInput"
+      @clearInput="clearInput"
+      @submitInput="submitInput"
+    >
+      <!--  <view slot="center1" class="ss">1321</view> --> </nav-bar
+    >121231321
+    <!-- <input class="in" :adjust-position="false" value="121" /> -->
+  </view>
+</template>
+
+<script>
+import navBar from "@/components/mys_navBar/mysNavBar";
+export default {
+  components: {
+    navBar,
+  },
+  data() {
+    return {
+      mysNavConfig: {
+        /* 站位开启 */
+        navPadding: true,
+        /* 背景 */
+        bgColor: "#ffffff",
+        // bgImage: "linear-gradient(-90deg, #d4fff3 0%, #91c9ff 100%)",
+        /* 渐变开启 */
+        isOpacity: false,
+        /* 渐变延时效果 */
+        opacityTime: 100,
+        /* 开启单页访问时 ，显示首页图标 */
+        isHome: false,
+        /* 固定导航 */
+        navFixed: true,
+        /* 左侧按钮样式 可选 type1 type2 */
+        btnType: "type1",
+        /* type1 左侧文字配置 */
+        leftText: {
+          text: "返回",
+          color: "",
+          fontSize: "32upx", // px upx rpx, // px upx rpx
+          fontWeight: "", // 100 - 700
+        },
+        /* 标题 （屏幕中心居中 两边图标中心居中使用slot center1） */
+        navTitle: {
+          text: "我是标题",
+          color: "",
+          fontSize: "32upx", // px upx rpx
+          fontWeight: "", // 100 - 700
+        },
+        /* type2 按钮 */
+        type2Config: {
+          // 左图标
+          leftPath: "/static/back_w.png",
+          // 右图标
+          rightPath: "/static/home.png",
+          // 圆角
+          radius: "40rpx",
+        },
+        /* 搜索框配置 */
+        searchConfig: {
+          value: "",
+          confirmType: "search",
+          placeholder: "输入搜索内容",
+          bgColor: "#f8f8f8",
+          // marginRight: "",
+          // marginLeft: "",
+          // disabled: false,
+          // placeholderStyle: 'color:red;',
+        },
+
+        /* 左侧返回自定义事件开启 */
+        isCustomFn: false,
+        /* 自定义左侧图标 */
+        leftIconPath: "/static/back_b.png",
+        /* 自定义右侧图标 */
+        rightIconPath: "/static/s.png",
+        /* home图标 */
+        homeIconPath: "/static/home_b.png",
+        /* 首页路径 */
+        homePath: "/pages/index/index",
+      },
+      scrollTop: 0,
+    };
+  },
+  methods: {
+    onLeftClick() {
+      console.log("1212");
+    },
+    onRightClick() {
+      this.mysNavConfig.searchConfig.value = "12";
+    },
+    changeInput(e) {
+      let value = e.detail.value;
+      console.log(value);
+      this.mysNavConfig.searchConfig.value = value;
+    },
+    clearInput() {
+      console.log("清空");
+      this.mysNavConfig.searchConfig.value = "";
+    },
+    submitInput(e) {
+      let value = e.detail.value;
+      console.log(value, "提交");
+    },
+  },
+  onPageScroll({ scrollTop }) {
+    this.scrollTop = scrollTop;
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.home {
+  background-color: #C6DFF1;
+  width: 750upx;
+  height: 100vh;
+}
+.img {
+  width: 100%;
+  height: 1000px;
+}
+.ss {
+  text-align: center;
+}
+</style>
