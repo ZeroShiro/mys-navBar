@@ -1,7 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "mv-bar": "/components/mys_navBar/mysNavBar"
-  }
-}
