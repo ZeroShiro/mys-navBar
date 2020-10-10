@@ -4,7 +4,10 @@
 
 ### 使用方法
 
+nvue 测试使用
 把 demo-X.vue 改为 nvue 测试
+
+喜欢的 git 点个 star ❤️ 感谢
 
 ```javascript
 // 在page.json 中 先定义 navigationBarTextStyle

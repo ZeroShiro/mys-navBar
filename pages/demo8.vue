@@ -5,7 +5,7 @@
         <image class="img" src="/static/map.png"></image>
       </view>
     </mvBar>
-    <view class="test1"></view>
+    <view class="test1" @click="goBack">返回</view>
     <view class="test2"></view>
     <view class="test3"></view>
   </view>
@@ -70,6 +70,9 @@ export default {
         title: "soltLeft",
         duration: 1000,
       });
+    },
+    goBack() {
+      uni.navigateBack();
     },
   },
 };

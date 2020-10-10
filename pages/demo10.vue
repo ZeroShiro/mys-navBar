@@ -7,7 +7,7 @@
         <text>居中2</text>
       </view>
     </mvBar>
-    <view class="test1"></view>
+    <view class="test1" @click="goBack">返回</view>
     <view class="test2"></view>
     <view class="test3"></view>
   </view>
@@ -65,6 +65,9 @@ export default {
         title: "soltCenter",
         duration: 1000,
       });
+    },
+    goBack() {
+      uni.navigateBack();
     },
   },
 };
